@@ -1,0 +1,138 @@
+1) r igual a 7.5
+   r igual a 8.8
+   x igual a 20
+   y igual a 19
+   p igual a 9.0
+   q igual a 10.0
+   x igual a 8
+   y igual a 3
+   y igual a 18
+
+2) A expressão relacional compara quantidade, tamanho ou magnitude dos valores
+propostos e a partir disso gera um valor verdade. Enquanto que a expressão 
+lógica avalia se expressões (relacionais ou não) são verdadeiras 
+ou falsas a partir de conectivos que estabelecem relação entre proposições.
+
+3)Uma variável pode ser definidade como um espaço a ser preenchido por uma
+informação. Toda variável contém 3 elementos principais: Endereço, Dado e 
+Identificador.
+
+4)
+
+/*
+Autor: Moises Auad Werneck
+Data: 12/04/2024
+Descrição: Diz ao usuário a quantos anos/meses/dias uma quantidade inteira de dias equivale. 
+Entrada: um inteiro
+Saída: 3 inteiros.
+Defesa: O valor deve ser inteiro.
+*/
+
+#include <stdio.h>
+
+int main(){
+    int d, totd, anos, meses, dias, acrescimo;
+    printf("Insira a quantidade de dias: ");
+    scanf("%d", &d);
+    totd = d;
+    anos = d / 365;
+    d = d%365;
+    meses = d / 30;
+    if (meses == 12) {
+        meses -= 1;
+        acrescimo = 30;
+    }
+    d = d%30;
+    dias = d + acrescimo;
+    printf("%d dias correspondem a %d Anos / %d Meses / %d Dias", totd, anos, meses, dias);
+
+}
+
+5) 
+
+Início
+   inteiro a, centena, dezena, unidade
+
+   escreva("Digite um valor inteiro entre 100 e 999: ")
+   leia(num)
+
+   centena = num / 100
+   dezena = (num%100)/10
+   unidade (num%100)%10
+
+   Se centena³ + dezena³ + unidade³ == num Então
+      escreva("A propriedade é válida")
+   Senão 
+      escreva("A propriedade não é válida")
+   FimSe
+Fim
+
+6) Uma sequência de instruções dadas ao computador em alguma linguagem 
+de programação a fim de que as execute para realizar uma tarefa.
+
+7)As partes de um programa são: 
+
+Cabeçalho: Exibe informações sobre o código, como: funcionalidade, tipos 
+de dados de entrada e saída, objetivos etc.
+
+Dicionário de dados: Define os dados que serão usados ao longo do código.
+
+Corpo: Procedimentos que o programa vai executar.
+
+Documentação: Comenta, ao longo do código, aspectos e nuances do 
+funcionamento do programa.
+
+8) 
+
+/*
+Autor: Moises Auad Werneck
+Data: 12/04/2024
+Descrição: Diz ao usuário a quantos anos/meses/dias uma quantidade inteira de dias equivale. 
+Entrada: um inteiro
+Saída: 3 inteiros.
+Defesa: O valor deve ser inteiro.
+*/
+
+#include <stdio.h>
+
+int main(){
+    int farinha, leite, ovos;
+    int mf, ml, mo, bolos;
+    printf("Digite separadamente quantos ingrediente possui (xícaras de farinha) (colheres de leite) (ovos): ");
+    scanf("%d %d %d", &farinha, &leite, &ovos);
+    mf = farinha/2;
+    ml = leite/5;
+    mo = ovos/3;
+    if (mf <= ml && mf <= mo) {
+        bolos = mf;
+    }
+    else if (ml <= mo) {
+        bolos = ml;
+    }
+    else {
+        bolos = mo;
+    }
+    printf("Sabendo que para fazer um bolo precisamos de 2 de farinha, 5 de leite e 3 de ovos.\n");
+    printf("Com a farinha, conseguimos fazer %d bolo(s).\n", mf);
+    printf("Com o leite, conseguimos fazer %d bolo(s).\n", ml);
+    printf("Com os ovos, conseguimos fazer %d bolo(s).\n", mo);
+    printf("Com esses ingredientes conseguimos fazer %d bolo(s).", bolos);    
+}
+
+9)Refinamento sucessivo é destrinchar o códigos em detalhes. É tornar uma
+instrução pouco detalhada em mais instruções com riqueza de detalhes para 
+evitar confusões e a fim de direcionar o receptor da mensagem para o 
+caminho exato a que o código almeja.
+
+10)
+   inteiro x1, y1, x2, y2, distancia
+   escreva("Qual a posição x1: ")
+   leia(x1)
+   escreva("Qual a posição y1: ")
+   leia(y1)
+   escreva("Qual a posição x2: ")
+   leia(x2)
+   escreva("Qual a posição y2: ")
+   leia(y2)
+   distancia = ((x2-x1)² + (y2-y1)²)^ (1/2)
+   escreva("A distância entre os pontos (",x1,"/",y1,") e (",x2,"/",y2,") no plano cartesiano é ",distancia)
