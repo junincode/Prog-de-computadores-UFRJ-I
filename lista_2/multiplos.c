@@ -16,7 +16,7 @@ int main(){
     scanf("%d %d %d", &n, &a, &b);
     printf("Os %d primeiro n.os naturais multiplos de %d e %d\n", n, a, b);
     while (total < n){
-        if (e_multiplo(i, a) && (e_multiplo(i, b))) {
+        if (e_multiplo(i, a) || (e_multiplo(i, b))) {
             printf("%d ", i);
             total += 1;
         }
