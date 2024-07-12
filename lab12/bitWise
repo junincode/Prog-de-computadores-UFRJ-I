@@ -1,0 +1,37 @@
+#include <stdio.h>
+#define TAM 3
+/* A lógico que o programa segue é: Caso a subtração entre dois números dê negativa, o operador ~ transforma gate em um número tipo 1111...1 
+e usando & com o número original, obtemos o número comparado. E caso a soma dê negativa, o operador ~ transforma tudo em 0 e no operador & nada é somado.*/
+int main() {
+int vet1[TAM] = { 1,10,100 };
+int vet2[TAM] = { 2,10,1 };
+int gate = 0; 
+int s = 0; 
+    for (int i = 0; i < TAM; i++) {
+//O código abaixo equivale a "if (vet1[i] >= vet2[i]) s += vet1[i]":
+    gate = ~((vet1[i] - vet2[i]) >> 31);
+    s += gate & vet1[i];
+    }
+    printf("\nMAIOR OU IGUAL\nExpectativa: %d\nRealidade = %d\n", 110, s);
+    s = 0; //Zeramos o somatório
+    for (int i = 0; i < TAM; i++) {
+//O código abaixo equivale a "if (vet1[i] < vet2[i]) s += vet1[i]":
+    gate = (vet1[i] - vet2[i]) >> 31;
+    s += gate & vet1[i];
+    }
+    printf("\nMENOR\nExpectativa: %d\nRealidade = %d\n", 1, s);
+    s = 0;
+    for(int i = 0; i < TAM; i++){
+        gate = (~(vet2[i] - vet1[i]) >> 31);
+        s += gate & vet1[i];
+    }
+    //IMPLEMENTAR OS DEMAIS CASOS!
+    printf("\nMENOR OU IGUAL\nExpectativa: %d\nRealidade = %d\n", 11, s);
+    s = 0;
+    for(int i = 0; i < TAM; i++){
+        gate = (vet2[i] - vet1[i]) >> 31;
+        s += gate & vet1[i];
+    }
+    printf("\nMAIOR\nExpectativa: %d\nRealidade = %d\n", 100, s);
+    return 0;
+}
