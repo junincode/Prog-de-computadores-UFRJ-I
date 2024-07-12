@@ -1,0 +1,20 @@
+/*
+Autor: Moises Auad Werneck
+Data: 28/06/2024
+Descrição: aplica desconto a produtos com sprintf
+Entrada: uma string
+Saída: nome do produto e valor descontado
+Defesa: valores float e char apenas
+*/
+#include <stdio.h>
+
+int main(){
+    char frase[100], produto[20];
+    float preco, desconto;
+    printf("Nome do produto | Preco | Desconto : ");
+    fgets(frase, sizeof(frase), stdin);
+    sscanf(frase, "%s %f %f", produto, &preco, &desconto);
+    sprintf(frase, "O produto %s esta com o novo preco R$%.2f", produto, preco - (preco*desconto)/100);
+    printf("%s", frase);
+    return 0;
+}
