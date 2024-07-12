@@ -1,0 +1,29 @@
+/*
+Autor: Moises Auad Werneck
+Data: 28/06/2024
+Descrição: analisa prova
+Entrada: n.o de questões, respostas e gabarito
+Saída: número de respostas certas
+Defesa: números inteiros, letras somente ABCDE
+*/
+#include <stdio.h>
+int main() {
+    int q, correto;
+    printf("Quantas questoes? ");
+    scanf("%d", &q);
+    char r[q+1], g[q+1];
+    
+    printf("Digite o gabarito da prova: ");
+    scanf("%s", g);
+    
+    printf("Digite as suas respostas: ");
+    scanf("%s", r);
+    
+    for(int i = 0; i < q; i++){
+        if(r[i] == g[i]){
+            correto++; 
+        }
+    }
+    printf("Voce acertou %d questoes", correto);
+return 0;
+}
