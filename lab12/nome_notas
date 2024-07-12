@@ -1,0 +1,26 @@
+/*
+Autor: Moises Auad Werneck
+Data: 28/06/2024
+Descrição: analisa prova
+Entrada: n.o de questões, respostas e gabarito
+Saída: número de respostas certas
+Defesa: números inteiros, letras somente ABCDE
+*/
+#include <stdio.h>
+
+int main(){
+    float n1, n2;
+    char frase[20], nome[20];
+        while(1){
+        printf("Nome e duas notas: ");
+        fgets(frase, sizeof(frase), stdin);
+        int result = sscanf(frase, "%s %f %f", nome, &n1, &n2);
+        if (result != 3){
+            printf("Erro.")
+            return 1;
+        }
+        printf("%s\n", nome);
+        printf("%.2f %.2f\n", n1, n2);
+        }
+    return 0;
+}
